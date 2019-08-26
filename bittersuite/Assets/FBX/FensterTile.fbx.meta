@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 91f58319477f84e4ba67773e75a377cb
+guid: f6a150ba8b7cf7a41817d210b383b741
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Pallette
-    second: {fileID: 2100000, guid: 7d103dc9dc95bc6468b140a739456905, type: 2}
+      name: Glas
+    second: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   materials:
     importMaterials: 1
     materialName: 0
