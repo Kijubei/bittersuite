@@ -207,6 +207,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BodenTile (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 4254946275600522335, guid: 79dff295cef2807499b8de3b441dca33,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 961451179116375628, guid: 79dff295cef2807499b8de3b441dca33,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -938,6 +943,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BodenTile (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4254946275600522335, guid: 79dff295cef2807499b8de3b441dca33,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 961451179116375628, guid: 79dff295cef2807499b8de3b441dca33,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1510,6 +1520,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BodenTile (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 4254946275600522335, guid: 79dff295cef2807499b8de3b441dca33,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 961451179116375628, guid: 79dff295cef2807499b8de3b441dca33,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1786,6 +1801,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BodenTile
       objectReference: {fileID: 0}
+    - target: {fileID: 4254946275600522335, guid: 79dff295cef2807499b8de3b441dca33,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 961451179116375628, guid: 79dff295cef2807499b8de3b441dca33,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1794,7 +1814,7 @@ PrefabInstance:
     - target: {fileID: 961451179116375628, guid: 79dff295cef2807499b8de3b441dca33,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.015
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 961451179116375628, guid: 79dff295cef2807499b8de3b441dca33,
         type: 3}
@@ -2383,6 +2403,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BodenTile (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 4254946275600522335, guid: 79dff295cef2807499b8de3b441dca33,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 961451179116375628, guid: 79dff295cef2807499b8de3b441dca33,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2541,6 +2566,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BodenTile (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4254946275600522335, guid: 79dff295cef2807499b8de3b441dca33,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 961451179116375628, guid: 79dff295cef2807499b8de3b441dca33,
         type: 3}
@@ -3255,6 +3285,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BodenTile (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4254946275600522335, guid: 79dff295cef2807499b8de3b441dca33,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 961451179116375628, guid: 79dff295cef2807499b8de3b441dca33,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3434,6 +3469,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BodenTile (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4254946275600522335, guid: 79dff295cef2807499b8de3b441dca33,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 961451179116375628, guid: 79dff295cef2807499b8de3b441dca33,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3508,6 +3548,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BodenTile (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4254946275600522335, guid: 79dff295cef2807499b8de3b441dca33,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 961451179116375628, guid: 79dff295cef2807499b8de3b441dca33,
         type: 3}
@@ -3652,6 +3697,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BodenTile (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4254946275600522335, guid: 79dff295cef2807499b8de3b441dca33,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 961451179116375628, guid: 79dff295cef2807499b8de3b441dca33,
         type: 3}
@@ -3904,6 +3954,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BodenTile (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 4254946275600522335, guid: 79dff295cef2807499b8de3b441dca33,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 961451179116375628, guid: 79dff295cef2807499b8de3b441dca33,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4125,6 +4180,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BodenTile (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4254946275600522335, guid: 79dff295cef2807499b8de3b441dca33,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 961451179116375628, guid: 79dff295cef2807499b8de3b441dca33,
         type: 3}
@@ -4513,6 +4573,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2497826420321289198, guid: 718ebe93faeb0ba46ac83cb2aaab2414,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2497826420321289198, guid: 718ebe93faeb0ba46ac83cb2aaab2414,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2497826420321289198, guid: 718ebe93faeb0ba46ac83cb2aaab2414,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 8919635799168598734, guid: 718ebe93faeb0ba46ac83cb2aaab2414,
         type: 3}
       propertyPath: m_Name
@@ -4733,6 +4808,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BodenTile (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 4254946275600522335, guid: 79dff295cef2807499b8de3b441dca33,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 961451179116375628, guid: 79dff295cef2807499b8de3b441dca33,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4801,6 +4881,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BodenTile (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4254946275600522335, guid: 79dff295cef2807499b8de3b441dca33,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 961451179116375628, guid: 79dff295cef2807499b8de3b441dca33,
         type: 3}
@@ -5499,6 +5584,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BodenTile (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 4254946275600522335, guid: 79dff295cef2807499b8de3b441dca33,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 961451179116375628, guid: 79dff295cef2807499b8de3b441dca33,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5735,6 +5825,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BodenTile (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4254946275600522335, guid: 79dff295cef2807499b8de3b441dca33,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 961451179116375628, guid: 79dff295cef2807499b8de3b441dca33,
         type: 3}
