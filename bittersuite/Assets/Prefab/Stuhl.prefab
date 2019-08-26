@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8089506166298583421}
   - component: {fileID: 943702311526472523}
   - component: {fileID: 6783614197118527410}
+  - component: {fileID: -7264394226150592605}
   m_Layer: 0
   m_Name: Stuhl
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5051045536528454510}
   m_LocalRotation: {x: -6.123234e-17, y: 1, z: 6.123234e-17, w: 0.0000000754979}
-  m_LocalPosition: {x: 2.041, y: 0.512, z: -0.96000004}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,3 +79,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &-7264394226150592605
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5051045536528454510}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4599694440365318020, guid: ab6a4027926b2d44c881d3817735b91c, type: 3}

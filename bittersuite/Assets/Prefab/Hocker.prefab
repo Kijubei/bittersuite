@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7167430112732274321}
   - component: {fileID: 2174346956541224103}
   - component: {fileID: 5553039917193140318}
+  - component: {fileID: -973336108255233222}
   m_Layer: 0
   m_Name: Hocker
   m_TagString: Untagged
@@ -78,3 +79,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &-973336108255233222
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6137432599704808578}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 7865694150191613224, guid: d4cc941c6c3104c4b8e792a0bf8e1c45, type: 3}

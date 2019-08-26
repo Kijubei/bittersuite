@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4663676291895534323}
   - component: {fileID: 4459604180391631045}
   - component: {fileID: 7989169360916505660}
+  - component: {fileID: 2825285038166219168}
   m_Layer: 0
   m_Name: Kissen2
   m_TagString: Untagged
@@ -78,3 +79,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &2825285038166219168
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8566951741941010656}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 1761664662450709830, guid: 796cf9ee224185b408823b6654232ac1, type: 3}

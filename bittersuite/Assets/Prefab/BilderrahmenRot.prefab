@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5602838196815746675}
   - component: {fileID: 3502183234555243589}
   - component: {fileID: 7180647056383774908}
+  - component: {fileID: -57205456154246124}
   m_Layer: 0
   m_Name: BilderrahmenRot
   m_TagString: Untagged
@@ -78,3 +79,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &-57205456154246124
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8906464745107203168}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -8086119567107063137, guid: 4bad45950f41bbd41b84e65cdab639e4, type: 3}

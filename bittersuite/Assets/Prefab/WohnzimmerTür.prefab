@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 8753904462886245980}
   - component: {fileID: 299237610726206570}
   - component: {fileID: 6276771510272020627}
+  - component: {fileID: 1189538729244166529}
   m_Layer: 0
-  m_Name: "WohnzimmerT\xFCr 1"
+  m_Name: "WohnzimmerT\xFCr"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,3 +79,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &1189538729244166529
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5703602642859353167}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 8180295292681861920, guid: 3f224f6eeb5d41b48a366a2df1fdf2ad, type: 3}

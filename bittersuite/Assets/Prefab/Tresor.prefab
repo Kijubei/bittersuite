@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 5963971957855906003}
   - component: {fileID: 3431547592631866085}
   - component: {fileID: 8981241099274202652}
+  - component: {fileID: -8152320729590853964}
+  - component: {fileID: 3623195803482885556}
   m_Layer: 0
   m_Name: Tresor
   m_TagString: Untagged
@@ -79,6 +81,36 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!54 &-8152320729590853964
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7250532879886883520}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &3623195803482885556
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7250532879886883520}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -5113187700322225018, guid: c78bcfd63549c78458e6c269cae53dbd, type: 3}
 --- !u!1 &8971741855639970158
 GameObject:
   m_ObjectHideFlags: 0
