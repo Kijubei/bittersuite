@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7044910068796191450}
   - component: {fileID: 2062519844135520492}
   - component: {fileID: 5738434428660593685}
-  - component: {fileID: 7828729828822039297}
   - component: {fileID: 6117633650597217779}
   m_Layer: 0
   m_Name: Thistle
@@ -80,22 +79,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!54 &7828729828822039297
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6314000193725235401}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!64 &6117633650597217779
 MeshCollider:
   m_ObjectHideFlags: 0
