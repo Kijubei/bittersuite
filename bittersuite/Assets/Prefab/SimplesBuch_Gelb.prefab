@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6679489378350722589}
   m_Layer: 0
   m_Name: SimplesBuch_Gelb
-  m_TagString: Untagged
+  m_TagString: SmallObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

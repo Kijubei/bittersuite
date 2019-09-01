@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8280815126436299215}
   m_Layer: 0
   m_Name: WhiskyflascheMitWhisky
-  m_TagString: Untagged
+  m_TagString: SmallObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1540681539054868477, guid: 87eb35c3a343c1749b759e09132d32b1, type: 3}
+  - {fileID: 2100000, guid: 0e3529c60303e1e45b73992ca5357e6d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -152,7 +152,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8483448214870232618, guid: 87eb35c3a343c1749b759e09132d32b1, type: 3}
+  - {fileID: 2100000, guid: 3b96330753c6eac44b9a452bdf205789, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
