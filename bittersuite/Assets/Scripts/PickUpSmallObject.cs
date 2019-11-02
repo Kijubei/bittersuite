@@ -17,10 +17,12 @@ public class PickUpSmallObject : MonoBehaviour
         //if (Input.GetKeyDown(KeyCode.K) && (guide.transform.position - transform.position).sqrMagnitude < range * range) 
         if (Input.GetKeyDown(KeyCode.T)) {
             (GameObject, float) closestResult = FindClosestObject();
-            GameObject clostest = closestResult.Item1;
+            GameObject closest = closestResult.Item1;
             float distance = closestResult.Item2;
             if ( distance <= range ) {
-                print(clostest.name); 
+                print(closest.name); 
+                closest.transform.parent = getRightArm();
+                closest.transform.localPosition.Set(0,0,0);
             } else {
                 print(distance);
             }
@@ -28,7 +30,8 @@ public class PickUpSmallObject : MonoBehaviour
 
     }
 
-    public (GameObject, float) FindClosestObject()
+    // Findet das nähste gameobject, dass mit dem tag "SmallObject" versehen ist
+    private (GameObject, float) FindClosestObject()
     {
         GameObject[] gos;
         gos = GameObject.FindGameObjectsWithTag("SmallObject");
@@ -46,6 +49,20 @@ public class PickUpSmallObject : MonoBehaviour
             }
         }
         return (closest, distance);
+    }
+
+    private Transform getRightArm() 
+    {
+        Transform current = this.transform.Find("MainCharacter");
+        current = current.transform.Find("mixamorig:Hips");
+        current = current.transform.Find("mixamorig:Spine");
+        current = current.transform.Find("mixamorig:Spine1");
+        current = current.transform.Find("mixamorig:Spine2");
+        current = current.transform.Find("mixamorig:RightShoulder");
+        current = current.transform.Find("mixamorig:RightArm");
+        current = current.transform.Find("mixamorig:RightForeArm");
+        current = current.transform.Find("mixamorig:RightHand");
+        return current;
     }
 
 }
