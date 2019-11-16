@@ -16,7 +16,6 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 rotationY = Vector3.zero;
     private Vector3 rotationX = Vector3.zero;
 
-
     // Start is called before the first frame update
     void Start()
     {

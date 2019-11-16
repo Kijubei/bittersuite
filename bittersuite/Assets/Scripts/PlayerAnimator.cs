@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class PlayerAnimator : MonoBehaviour
 {
-    private Animator anim;
+    private Animator animator;
     // Start is called before the first frame update
     void Start()
     {        
-        anim = gameObject.GetComponentInChildren<Animator>();
+        animator = gameObject.GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -16,11 +16,11 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKey (KeyCode.W))
         {
-            anim.SetInteger("AnimPar", 1);
+            animator.SetInteger("AnimPar", 1);
         }
         else
         {
-            anim.SetInteger("AnimPar", 0);
+            animator.SetInteger("AnimPar", 0);
         }
     }
 }
