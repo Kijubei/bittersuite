@@ -21,8 +21,8 @@ public class PickUpSmallObject : MonoBehaviour
             float distance = closestResult.Item2;
             if ( distance <= range ) {
                 print(closest.name); 
-                closest.transform.parent = getRightArm();
-                closest.transform.localPosition.Set(0,0,0);
+                // closest.transform.parent = getRightArm();
+                closest.GetComponent<PickableObject>().moveToRightHand();
             } else {
                 print(distance);
             }
