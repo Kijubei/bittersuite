@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4121015180163584821}
   - component: {fileID: 7641553120965652428}
   - component: {fileID: 2438786438572528903}
+  - component: {fileID: 7807381131066094298}
   m_Layer: 0
   m_Name: Keycard_Blau
   m_TagString: SmallObject
@@ -93,3 +94,17 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 2599156267799460851, guid: 4d0701431cc957845a50b6816bd6a78c, type: 3}
+--- !u!114 &7807381131066094298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8228241579613969168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6f6c82cc3ddd98439f7a161f5967b02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickPositionRightHand: {x: 0.0141, y: 0.1197, z: 0.0658}
+  pickRotationRightHand: {x: 45.833, y: 87.596, z: -51.018}
