@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1734645453424338193}
   - component: {fileID: 5417333038039259624}
   - component: {fileID: -1920539535782580667}
+  - component: {fileID: 5574612345830099833}
   m_Layer: 0
   m_Name: Schluessel
   m_TagString: SmallObject
@@ -93,3 +94,17 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4378626225376690045, guid: 87583d81ec77adb4887cbcef6edb5b2f, type: 3}
+--- !u!114 &5574612345830099833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5986108257574546740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6f6c82cc3ddd98439f7a161f5967b02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickPositionRightHand: {x: 0.011, y: 0.087, z: 0.056}
+  pickRotationRightHand: {x: -208.535, y: -93.25598, z: -58.00299}

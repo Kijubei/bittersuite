@@ -15743,7 +15743,7 @@ PrefabInstance:
     - target: {fileID: 5986108257574546740, guid: 952b70a2c7f6a3a478f328be21e28cf5,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: SmallObject
       objectReference: {fileID: 0}
     - target: {fileID: 7298563023329140519, guid: 952b70a2c7f6a3a478f328be21e28cf5,
         type: 3}
