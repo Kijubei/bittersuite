@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3410322233026167828}
   - component: {fileID: 8966507892126497005}
   - component: {fileID: 352989972968466968}
+  - component: {fileID: 4493386170796981435}
   m_Layer: 0
   m_Name: Keycard
   m_TagString: SmallObject
@@ -93,3 +94,17 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 5697637368414676610, guid: f8d1732b01f15224583f2975f0e5c60c, type: 3}
+--- !u!114 &4493386170796981435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7229325680712715313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6f6c82cc3ddd98439f7a161f5967b02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickPositionRightHand: {x: 0.0141, y: 0.1197, z: 0.0658}
+  pickRotationRightHand: {x: 45.833, y: 87.596, z: -51.018}
