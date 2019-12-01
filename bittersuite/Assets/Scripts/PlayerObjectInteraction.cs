@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickUpSmallObject : MonoBehaviour
+public class PlayerObjectInteraction : MonoBehaviour
 {
+    private KeyCode pickUpButton = KeyCode.Mouse1;
+    private KeyCode useObjectButton = KeyCode.Mouse0;
     private GameObject smallObject;
+    private bool hasObject = false;
     public float range;
     // Start is called before the first frame update
     void Start()
@@ -14,18 +17,22 @@ public class PickUpSmallObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.K) && (guide.transform.position - transform.position).sqrMagnitude < range * range) 
-        if (Input.GetKeyDown(KeyCode.T)) {
+        if (Input.GetKeyDown(pickUpButton) && !hasObject) {
+
             (GameObject, float) closestResult = FindClosestObject();
             GameObject closest = closestResult.Item1;
             float distance = closestResult.Item2;
-            if ( distance <= range ) {
-                print(closest.name); 
-                // closest.transform.parent = getRightArm();
-                closest.GetComponent<PickableObject>().moveToRightHand();
-            } else {
-                print(distance);
+
+            if (closest.tag == "SmallObject") {
+                pickUpSmallObject(closest, distance);
+            } else if (closest.tag == "BigObject") {
+
             }
+            
+        }
+
+        if (Input.GetKeyDown(useObjectButton) && hasObject) {
+            fling(); 
         }
 
     }
@@ -51,18 +58,19 @@ public class PickUpSmallObject : MonoBehaviour
         return (closest, distance);
     }
 
-    private Transform getRightArm() 
-    {
-        Transform current = this.transform.Find("MainCharacter");
-        current = current.transform.Find("mixamorig:Hips");
-        current = current.transform.Find("mixamorig:Spine");
-        current = current.transform.Find("mixamorig:Spine1");
-        current = current.transform.Find("mixamorig:Spine2");
-        current = current.transform.Find("mixamorig:RightShoulder");
-        current = current.transform.Find("mixamorig:RightArm");
-        current = current.transform.Find("mixamorig:RightForeArm");
-        current = current.transform.Find("mixamorig:RightHand");
-        return current;
+    private void pickUpSmallObject(GameObject closestGO, float distance) {
+        if ( distance <= range ) {
+                hasObject = true;
+                smallObject = closestGO;
+                smallObject.GetComponent<PickableObject>().moveToRightHand();
+            } else {
+                print(distance);
+            }
+    }
+
+    private void fling() {
+        hasObject = false;
+        smallObject.GetComponent<PickableObject>().fling();
     }
 
 }

@@ -7,6 +7,8 @@ public class PickableObject : MonoBehaviour
     public Vector3 pickPositionRightHand;
     public Vector3 pickRotationRightHand;
 
+    public float flingPower = 3;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +22,7 @@ public class PickableObject : MonoBehaviour
     }
 
     public void moveToRightHand() {
+        this.GetComponent<Rigidbody>().isKinematic = true;
         this.transform.parent = getRightArm();
         this.transform.localPosition = pickPositionRightHand;
         this.transform.localEulerAngles = pickRotationRightHand;
@@ -29,6 +32,11 @@ public class PickableObject : MonoBehaviour
     {
         GameObject go = GameObject.Find("mixamorig:RightHand");
         return go.transform;
+    }
+
+    public void fling() {
+        this.GetComponent<Rigidbody>().isKinematic = false;
+        this.transform.parent = null;
     }
 
 }
