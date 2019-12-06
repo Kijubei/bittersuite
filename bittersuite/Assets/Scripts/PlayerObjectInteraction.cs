@@ -6,12 +6,14 @@ public class PlayerObjectInteraction : MonoBehaviour
 {
     private KeyCode pickUpButton = KeyCode.Mouse1;
     private KeyCode useObjectButton = KeyCode.Mouse0;
-    private GameObject smallObject;
+    private GameObject pickedSmallObject;
+    private GameObject[] pickableGOList;
     private bool hasObject = false;
     public float range;
     // Start is called before the first frame update
     void Start()
     {
+        pickableGOList = GameObject.FindGameObjectsWithTag("SmallObject");
     }
 
     // Update is called once per frame
@@ -40,12 +42,10 @@ public class PlayerObjectInteraction : MonoBehaviour
     // Findet das nähste gameobject, dass mit dem tag "SmallObject" versehen ist
     private (GameObject, float) FindClosestObject()
     {
-        GameObject[] gos;
-        gos = GameObject.FindGameObjectsWithTag("SmallObject");
         GameObject closest = null;
         float distance = Mathf.Infinity;
         Vector3 position = transform.position;
-        foreach (GameObject go in gos)
+        foreach (GameObject go in pickableGOList)
         {
             Vector3 diff = go.transform.position - position;
             float curDistance = diff.sqrMagnitude;
@@ -61,8 +61,8 @@ public class PlayerObjectInteraction : MonoBehaviour
     private void pickUpSmallObject(GameObject closestGO, float distance) {
         if ( distance <= range ) {
                 hasObject = true;
-                smallObject = closestGO;
-                smallObject.GetComponent<PickableObject>().moveToRightHand();
+                pickedSmallObject = closestGO;
+                pickedSmallObject.GetComponent<PickableObject>().moveToRightHand();
             } else {
                 print(distance);
             }
@@ -70,7 +70,7 @@ public class PlayerObjectInteraction : MonoBehaviour
 
     private void fling() {
         hasObject = false;
-        smallObject.GetComponent<PickableObject>().fling();
+        pickedSmallObject.GetComponent<PickableObject>().fling();
     }
 
 }
