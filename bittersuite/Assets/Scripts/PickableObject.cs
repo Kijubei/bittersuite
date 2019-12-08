@@ -4,18 +4,25 @@ using UnityEngine;
 
 public class PickableObject : MonoBehaviour
 {
-    public Vector3 pickPositionRightHand;
-    public Vector3 pickRotationRightHand;
+    public Vector3 pickPosition;
+    public Vector3 pickRotation;
+    [Tooltip("z.B. Rechte Hand - Hält die Sachen")]
+    public Transform holdingObject;
 
-    public float flingPower = 3;
-    //public Rigidbody rigidbody;
+    public Rigidbody rb;
 
     private Vector3 throwPosition = new Vector3(-0.4f, -0.3f, -0.3f);
     private bool applyForce = false;
+    private Vector3 flingDirection;
+    private float flingPower;
 
     // Start is called before the first frame update
     void Start()
     {
+        
+        if (pickPosition == null || pickRotation == null || holdingObject == null || rb == null) {
+            Debug.LogWarning("Not all public field are instanciated!", this);
+        }
         
     }
 
@@ -24,16 +31,16 @@ public class PickableObject : MonoBehaviour
     {
         if (applyForce){
             applyForce = false;
-            rigidbody.AddForce(flingDirection * power);
+            rb.AddForce(flingDirection * flingPower);
 
         }
     }
 
     public void moveToRightHand() {
-        rigidbody.isKinematic = true;
-        this.transform.parent = getRightArm();
-        this.transform.localPosition = pickPositionRightHand;
-        this.transform.localEulerAngles = pickRotationRightHand;
+        rb.isKinematic = true;
+        this.transform.parent = holdingObject;
+        this.transform.localPosition = pickPosition;
+        this.transform.localEulerAngles = pickRotation;
     }
 
     private void moveToThrowPosition() {
@@ -41,16 +48,11 @@ public class PickableObject : MonoBehaviour
         this.transform.parent = null;
     }
 
-    private Transform getRightArm() 
-    {
-        GameObject go = GameObject.Find("mixamorig:RightHand");
-        return go.transform;
-    }
-
     public void fling(Vector3 flingDirection, float power) {
-        rigidbody.isKinematic = false;
-        // Move to Throw position
+        rb.isKinematic = false;
         this.moveToThrowPosition();
+        this.flingDirection = flingDirection;
+        this.flingPower = power;
         applyForce = true;
     }
 

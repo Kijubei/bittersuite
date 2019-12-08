@@ -1,6 +1,7 @@
 Todo:
 
-* Object Werfen
+* Mass / Power / Drag anpassen
+* pickPosition / rotation muss wieder eingestellt werden
 * große Object bewegen
 * Tür öffnen
 * Schalter auf dem Boden aktivierbar
