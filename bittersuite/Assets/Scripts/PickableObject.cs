@@ -8,6 +8,10 @@ public class PickableObject : MonoBehaviour
     public Vector3 pickRotationRightHand;
 
     public float flingPower = 3;
+    //public Rigidbody rigidbody;
+
+    private Vector3 throwPosition = new Vector3(-0.4f, -0.3f, -0.3f);
+    private bool applyForce = false;
 
     // Start is called before the first frame update
     void Start()
@@ -16,16 +20,25 @@ public class PickableObject : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        if (applyForce){
+            applyForce = false;
+            rigidbody.AddForce(flingDirection * power);
+
+        }
     }
 
     public void moveToRightHand() {
-        this.GetComponent<Rigidbody>().isKinematic = true;
+        rigidbody.isKinematic = true;
         this.transform.parent = getRightArm();
         this.transform.localPosition = pickPositionRightHand;
         this.transform.localEulerAngles = pickRotationRightHand;
+    }
+
+    private void moveToThrowPosition() {
+        this.transform.localPosition = throwPosition;
+        this.transform.parent = null;
     }
 
     private Transform getRightArm() 
@@ -34,9 +47,11 @@ public class PickableObject : MonoBehaviour
         return go.transform;
     }
 
-    public void fling() {
-        this.GetComponent<Rigidbody>().isKinematic = false;
-        this.transform.parent = null;
+    public void fling(Vector3 flingDirection, float power) {
+        rigidbody.isKinematic = false;
+        // Move to Throw position
+        this.moveToThrowPosition();
+        applyForce = true;
     }
 
 }

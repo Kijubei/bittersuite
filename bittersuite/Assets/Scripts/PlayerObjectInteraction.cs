@@ -9,8 +9,10 @@ public class PlayerObjectInteraction : MonoBehaviour
     private GameObject pickedSmallObject;
     private GameObject[] pickableGOList;
     private bool hasObject = false;
-    public float range;
+    public float range; // Range allowed to interact with objects
+    public float power; // power applied when throwing
     // Start is called before the first frame update
+    public Transform playerCameraDirection;
     void Start()
     {
         pickableGOList = GameObject.FindGameObjectsWithTag("SmallObject");
@@ -70,7 +72,7 @@ public class PlayerObjectInteraction : MonoBehaviour
 
     private void fling() {
         hasObject = false;
-        pickedSmallObject.GetComponent<PickableObject>().fling();
+        pickedSmallObject.GetComponent<PickableObject>().fling(playerCameraDirection.forward, power);
     }
 
 }

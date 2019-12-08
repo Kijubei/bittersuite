@@ -1,7 +1,7 @@
 Todo:
 
-* Fehler wenn Object genommen und fallengelassen wird
 * Object Werfen
 * große Object bewegen
 * Tür öffnen
 * Schalter auf dem Boden aktivierbar
+* Benutzbare Items in Reichweite brauchen "glow"
