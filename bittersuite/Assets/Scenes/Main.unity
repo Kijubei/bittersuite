@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.8622559, g: 0.753181, b: 0.7158657, a: 1}
+  m_IndirectSpecularColor: {r: 0.17514533, g: 0.15038034, b: 0.14298359, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -22010,10 +22010,55 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 538028579}
     m_Modifications:
+    - target: {fileID: 3080371304833505404, guid: 33e52d994144fc74fbe646a3e966afe6,
+        type: 3}
+      propertyPath: m_Range
+      value: 4.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3080371304833505404, guid: 33e52d994144fc74fbe646a3e966afe6,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3080371304833505404, guid: 33e52d994144fc74fbe646a3e966afe6,
+        type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5692725445077867757, guid: 33e52d994144fc74fbe646a3e966afe6,
         type: 3}
       propertyPath: m_Name
       value: Wandbeleuchtung
+      objectReference: {fileID: 0}
+    - target: {fileID: 6562286310669664571, guid: 33e52d994144fc74fbe646a3e966afe6,
+        type: 3}
+      propertyPath: m_Range
+      value: 4.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6562286310669664571, guid: 33e52d994144fc74fbe646a3e966afe6,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6562286310669664571, guid: 33e52d994144fc74fbe646a3e966afe6,
+        type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907313653432774237, guid: 33e52d994144fc74fbe646a3e966afe6,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907313653432774237, guid: 33e52d994144fc74fbe646a3e966afe6,
+        type: 3}
+      propertyPath: m_Range
+      value: 4.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907313653432774237, guid: 33e52d994144fc74fbe646a3e966afe6,
+        type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8744801326244261630, guid: 33e52d994144fc74fbe646a3e966afe6,
         type: 3}
@@ -22380,12 +22425,17 @@ PrefabInstance:
     - target: {fileID: 7392217605031577837, guid: 70c466b7ccaf2ff459e273ef9b261cd2,
         type: 3}
       propertyPath: m_Intensity
-      value: 1
+      value: 3.8
       objectReference: {fileID: 0}
     - target: {fileID: 7392217605031577837, guid: 70c466b7ccaf2ff459e273ef9b261cd2,
         type: 3}
       propertyPath: m_Range
-      value: 3.9
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7392217605031577837, guid: 70c466b7ccaf2ff459e273ef9b261cd2,
+        type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 0.095
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70c466b7ccaf2ff459e273ef9b261cd2, type: 3}
