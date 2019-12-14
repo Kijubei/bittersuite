@@ -1,8 +1,58 @@
 Todo:
 
 * Mass / Power / Drag anpassen
-* pickPosition / rotation muss wieder eingestellt werden
 * große Object bewegen
 * Tür öffnen
 * Schalter auf dem Boden aktivierbar
 * Benutzbare Items in Reichweite brauchen "glow"
+
+Überlegung interagieren:
+
+Fall: Aufheben gedrückt
+    Fall: Kein Object in der Hand
+        Fall Object in Reichweite
+            Fall kleines Object
+                -> Nehme Object
+            Fall großes Object
+                -> Schiebe Object
+            Fall aufmachbares Object
+                -> Nichts passiert
+        Fall Object nicht in Reichweite
+            -> Nichts passiert
+    Fall Object in der Hand
+        -> Nichts passiert
+Fall: Benutzen gedrückt
+    Fall: Kein Object in der Hand
+        Fall Object in Reichweite
+            Fall kleines Object
+                -> Nichts passiert
+            Fall großes Object
+                -> Nichts passiert
+            Fall aufmachbares Object
+                Fall Verschlossen
+                    -> Nichts passiert 
+                    -> Verschlossen geräusch wird gespielt
+                Fall Unverschlossen
+                    -> Öffne/Schließe Object
+        Fall Object NICHT in Reichweite
+            -> Nichts passiert
+    Fall: Object in der Hand
+        Fall Object in Reichweite
+            Fall Großes ODER kleines Object
+                Fall Kombinierbar
+                    -> Object in Reichweite wird zu kombiniertem Object
+                Fall nicht Kombinierbar
+                    -> Nichts passiert
+            Fall aufmachbares Object
+                Fall Verschlossen
+                    Fall Kombinierbar (z.B. Schlüssel/Key)
+                        -> Öffne/Schließe Object
+                        -> Object in der Hand verschwindet
+                    Fall passen NICHT zusammmen
+                        -> Nichts passiert 
+                        -> Verschlossen geräusch wird gespielt
+                Fall Unverschlossen
+                    -> Öffne/Schließe Object
+        Fall Object nicht in Reichweite
+            -> Object in Hand wird geworfen
+            
