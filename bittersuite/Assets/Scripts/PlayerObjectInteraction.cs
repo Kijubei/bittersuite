@@ -24,42 +24,62 @@ public class PlayerObjectInteraction : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(pickUpButton) && !hasObject) {
-
-            (GameObject, float) closestResult = FindClosestObject();
-            GameObject closest = closestResult.Item1;
-            float distance = closestResult.Item2;
-
-            if (closest.tag == "SmallObject") {
-                pickUpSmallObject(closest, distance);
-            } else if (closest.tag == "BigObject") {
-
-            }
-            
+            tryToPickupObject();
         }
 
-        if (Input.GetKeyDown(useObjectButton) && hasObject) {
-            fling(); 
+        if (Input.GetKeyDown(useObjectButton)) {
+            if (hasObject) {
+                // in Range
+                    // Kombinierbar
+                    // Aufmachbar
+                    // Sonst
+                // Sonst
+                fling();
+            } else {
+                // in range
+                    // aufmachbar
+                        // verschlossen
+                        // unverschlossen
+                // Sonst
+            }
+             
         }
 
     }
 
-    // Findet das nähste gameobject, dass mit dem tag "SmallObject" versehen ist
-    private (GameObject, float) FindClosestObject()
+    private void tryToPickupObject() {
+        (GameObject, float) closestResult = searchClosestObjectAndDistance();
+         if (closestResult.Item1 is null) { 
+             return; 
+        }
+        GameObject closest = closestResult.Item1;
+        float distance = closestResult.Item2;
+
+        if (closest.tag == "SmallObject") {
+            pickUpSmallObject(closest, distance);
+        } else if (closest.tag == "BigObject") {
+
+        }
+
+    }
+
+    // Findet das nähste gameobject aus der liste pickableGOList, oder null wenn out of range
+    private (GameObject, float) searchClosestObjectAndDistance()
     {
-        GameObject closest = null;
-        float distance = Mathf.Infinity;
+        GameObject closestGameObject = null;
+        float closestDistance = Mathf.Infinity;
         Vector3 position = transform.position;
-        foreach (GameObject go in pickableGOList)
+        foreach (GameObject currentGameObject in pickableGOList)
         {
-            Vector3 diff = go.transform.position - position;
+            Vector3 diff = currentGameObject.transform.position - position;
             float curDistance = diff.sqrMagnitude;
-            if (curDistance < distance)
+            if (curDistance < closestDistance)
             {
-                closest = go;
-                distance = curDistance;
+                closestGameObject = currentGameObject;
+                closestDistance = curDistance;
             }
         }
-        return (closest, distance);
+        return (closestGameObject, closestDistance);
     }
 
     private void pickUpSmallObject(GameObject closestGO, float distance) {

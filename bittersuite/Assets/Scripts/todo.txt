@@ -5,6 +5,7 @@ Todo:
 * Tür öffnen
 * Schalter auf dem Boden aktivierbar
 * Benutzbare Items in Reichweite brauchen "glow"
+* Kamera rework
 
 Überlegung interagieren:
 
@@ -38,11 +39,8 @@ Fall: Benutzen gedrückt
             -> Nichts passiert
     Fall: Object in der Hand
         Fall Object in Reichweite
-            Fall Großes ODER kleines Object
-                Fall Kombinierbar
-                    -> Object in Reichweite wird zu kombiniertem Object
-                Fall nicht Kombinierbar
-                    -> Nichts passiert
+            Fall Kombinierbar
+                -> Object in Reichweite wird zu kombiniertem Object
             Fall aufmachbares Object
                 Fall Verschlossen
                     Fall Kombinierbar (z.B. Schlüssel/Key)
@@ -53,6 +51,20 @@ Fall: Benutzen gedrückt
                         -> Verschlossen geräusch wird gespielt
                 Fall Unverschlossen
                     -> Öffne/Schließe Object
+            Sonst
+                Fall kleines Object
+                    -> Object in Hand wird geworfen
+                Fall großes Object
+                    -> Object wird stehen gelassen
         Fall Object nicht in Reichweite
-            -> Object in Hand wird geworfen
+            Fall kleines Object
+                -> Object in Hand wird geworfen
+            Fall großes Object
+                -> Object wird stehen gelassen
             
+
+Object Typen:
+    -> kleines Object
+    -> großes Object
+    -> aufmachbares Object
+        -> Verschlossen / Unverschlossen
