@@ -6,7 +6,7 @@ using UnityEngine;
 public class PressureObject : MonoBehaviour
 {
     private GameObject[] heavyGOList;
-    private float activationDistance = 13;
+    private float activationDistance = 3;
 
     [Tooltip("The object that is pushed down")]
     public GameObject pressureButton;
@@ -50,8 +50,7 @@ public class PressureObject : MonoBehaviour
         Vector3 selfPosition = this.transform.position;
         foreach (GameObject heavyObject in heavyGOList)
         {
-            Vector3 diff = heavyObject.transform.position - selfPosition;
-            float curDistance = diff.sqrMagnitude;
+            float curDistance = Vector3.Distance(selfPosition, heavyObject.transform.position);
             if (curDistance < activationDistance)
             {
                 Debug.Log("Distance: " + curDistance);

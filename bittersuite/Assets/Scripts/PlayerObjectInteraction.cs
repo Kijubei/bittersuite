@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerObjectInteraction : MonoBehaviour
 {
-    private KeyCode pickUpButton = KeyCode.Mouse1;
-    private KeyCode useObjectButton = KeyCode.Mouse0;
+    private KeyCode pickUpButton = KeyCode.Mouse0;
+    private KeyCode useObjectButton = KeyCode.Mouse1;
     private GameObject pickedSmallObject;
     private GameObject[] pickableGOList;
     private bool hasObject = false;
@@ -68,11 +68,10 @@ public class PlayerObjectInteraction : MonoBehaviour
     {
         GameObject closestGameObject = null;
         float closestDistance = Mathf.Infinity;
-        Vector3 position = transform.position;
+        Vector3 position = this.transform.position;
         foreach (GameObject currentGameObject in pickableGOList)
         {
-            Vector3 diff = currentGameObject.transform.position - position;
-            float curDistance = diff.sqrMagnitude;
+            float curDistance = Vector3.Distance(position, currentGameObject.transform.position);
             if (curDistance < closestDistance)
             {
                 closestGameObject = currentGameObject;
