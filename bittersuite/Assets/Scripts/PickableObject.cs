@@ -9,7 +9,7 @@ public class PickableObject : MonoBehaviour
     [Tooltip("z.B. Rechte Hand - Hält die Sachen")]
     public Transform holdingObject;
 
-    public Rigidbody rb;
+    public Rigidbody objectRigidbody;
 
     private Vector3 throwPosition = new Vector3(-0.4f, -0.3f, -0.3f);
     private bool applyForce = false;
@@ -19,11 +19,9 @@ public class PickableObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-        if (pickPosition == null || pickRotation == null || holdingObject == null || rb == null) {
+        if (pickPosition == null || pickRotation == null || holdingObject == null || objectRigidbody == null) {
             Debug.LogWarning("Not all public field are instanciated!", this);
         }
-        
     }
 
     // Update is called once per frame
@@ -31,13 +29,13 @@ public class PickableObject : MonoBehaviour
     {
         if (applyForce){
             applyForce = false;
-            rb.AddForce(flingDirection * flingPower);
+            objectRigidbody.AddForce(flingDirection * flingPower);
 
         }
     }
 
     public void moveToRightHand() {
-        rb.isKinematic = true;
+        objectRigidbody.isKinematic = true;
         this.transform.parent = holdingObject;
         this.transform.localPosition = pickPosition;
         this.transform.localEulerAngles = pickRotation;
@@ -49,7 +47,7 @@ public class PickableObject : MonoBehaviour
     }
 
     public void fling(Vector3 flingDirection, float power) {
-        rb.isKinematic = false;
+        objectRigidbody.isKinematic = false;
         this.moveToThrowPosition();
         this.flingDirection = flingDirection;
         this.flingPower = power;

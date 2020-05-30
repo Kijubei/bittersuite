@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - SmallObject
+  - BigObject
   layers:
   - Default
   - TransparentFX
