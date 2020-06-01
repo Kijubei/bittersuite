@@ -3,17 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class PressureObject : MonoBehaviour
+public class PressurePlate : MonoBehaviour
 {
     private GameObject[] heavyGOList;
-    private float activationDistance = 3;
+    private float activationDistance = 0.5f;
+    private bool isButtonPressed = false;
 
     [Tooltip("The object that is pushed down")]
     public GameObject pressureButton;
+
+    [Tooltip("The Object that will activate")]
+    public Activateable activationObject;
     // Start is called before the first frame update
     void Start()
     {
-        if (pressureButton is null) 
+        if (pressureButton is null || activationObject is null) 
         {
             Debug.LogWarning("Not all public field are instanciated!", this);
         }
@@ -30,14 +34,12 @@ public class PressureObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isHeavyObjectOnTop())
+        bool isOnTop = isHeavyObjectOnTop();
+        if (isOnTop && !isButtonPressed)
         {
-            buttonPressed(true);
-            Debug.Log("PRESSED");
-            //connectedObject.activate();
-        } else {
-            buttonPressed(false);
-            //connectedObject.deactivate();
+            buttonPressed();
+        } else if (!isOnTop && isButtonPressed) {
+            buttonReleased();
         } 
     }
 
@@ -53,15 +55,22 @@ public class PressureObject : MonoBehaviour
             float curDistance = Vector3.Distance(selfPosition, heavyObject.transform.position);
             if (curDistance < activationDistance)
             {
-                Debug.Log("Distance: " + curDistance);
+                //Debug.Log("Distance: " + curDistance);
                 return true;
             }
         }
         return false;
     }
 
-    private void buttonPressed(bool isPressed)
+    private void buttonPressed()
     {
+        isButtonPressed = true;
+        activationObject.activate();
+    }
 
+    private void buttonReleased()
+    {
+        isButtonPressed = false;
+        activationObject.deactivate();
     }
 }
