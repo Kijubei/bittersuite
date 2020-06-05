@@ -6,13 +6,13 @@ public class DoorActivation : Activateable
 {
     private bool isMovementNeeded = false;
     private Quaternion rotationDestination;
-    private int moveRadius = 0;
+    private Quaternion startRotation;
     public float moveSpeed;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        startRotation =  this.gameObject.transform.rotation;
     }
 
     // Update is called once per frame
@@ -26,13 +26,11 @@ public class DoorActivation : Activateable
     
     override public void activate() 
     {
-        Debug.Log("Door Activated");
-        openDoor();
+        openDoor(); 
     }
 
     override public void deactivate()
     {
-        Debug.Log("Door Deactivated");
         closeDoor();
     }
 
@@ -40,7 +38,7 @@ public class DoorActivation : Activateable
     {
         isMovementNeeded = true;
 
-        Quaternion startRotation = this.gameObject.transform.rotation ;
+        // Ka warum man das so machen muss ...
         rotationDestination = Quaternion.Euler( new Vector3(0,100,0) ) * startRotation ;
     }
 
@@ -48,19 +46,14 @@ public class DoorActivation : Activateable
     {
         isMovementNeeded = true;
 
-        Quaternion startRotation = this.gameObject.transform.rotation ;
         rotationDestination = Quaternion.Euler( new Vector3(0,0,0) ) * startRotation ;
     }
 
     private void moveDoor()
-    {
-        float delta = moveSpeed * Time.deltaTime;
+    {        
+        this.gameObject.transform.rotation = Quaternion.RotateTowards(this.gameObject.transform.rotation, rotationDestination, 1);
 
-        Quaternion currentRotation = this.gameObject.transform.rotation;
-
-        currentRotation = Quaternion.Lerp( currentRotation, rotationDestination, delta );    
-        
-        if (currentRotation == rotationDestination)
+        if (this.gameObject.transform.rotation == rotationDestination)
         {
             isMovementNeeded = false;
         }
