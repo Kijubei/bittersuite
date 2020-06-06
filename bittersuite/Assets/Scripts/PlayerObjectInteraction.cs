@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerObjectInteraction : MonoBehaviour
 {
     private KeyCode pickUpButton = KeyCode.Mouse0;
     private KeyCode useObjectButton = KeyCode.Mouse1;
-    private GameObject pickedSmallObject;
+    private GameObject pickedObject;
     private GameObject[] pickableGOList;
     private bool hasObject = false;
     [Tooltip("Range allowed to interact with objects")]
@@ -17,7 +18,11 @@ public class PlayerObjectInteraction : MonoBehaviour
     public Transform playerCameraDirection;
     void Start()
     {
-        pickableGOList = GameObject.FindGameObjectsWithTag("SmallObject");
+        GameObject[] smallObjectList = GameObject.FindGameObjectsWithTag("SmallObject");
+        GameObject[] bigObjectList = GameObject.FindGameObjectsWithTag("BigObject");
+        // pickableGOList = new GameObject[smallObjectList.Length + bigObjectList.Length];
+
+        pickableGOList = smallObjectList.Concat(bigObjectList).ToArray();
     }
 
     // Update is called once per frame
@@ -34,7 +39,7 @@ public class PlayerObjectInteraction : MonoBehaviour
                     // Aufmachbar
                     // Sonst
                 // Sonst
-                fling();
+                useObject();
             } else {
                 // in range
                     // aufmachbar
@@ -48,23 +53,21 @@ public class PlayerObjectInteraction : MonoBehaviour
     }
 
     private void tryToPickupObject() {
-        (GameObject, float) closestResult = searchClosestObjectAndDistance();
-         if (closestResult.Item1 is null) { 
+        GameObject closestObject = searchClosestObjectInDistance();
+         if (closestObject is null) { 
              return; 
         }
-        GameObject closest = closestResult.Item1;
-        float distance = closestResult.Item2;
 
-        if (closest.tag == "SmallObject") {
-            pickUpSmallObject(closest, distance);
-        } else if (closest.tag == "BigObject") {
-
+        if (closestObject.tag == "SmallObject") {
+            pickUpSmallObject(closestObject);
+        } else if (closestObject.tag == "BigObject") {
+            moveBigObject(closestObject);
         }
 
     }
 
     // Findet das nähste gameobject aus der liste pickableGOList, oder null wenn out of range
-    private (GameObject, float) searchClosestObjectAndDistance()
+    private GameObject searchClosestObjectInDistance()
     {
         GameObject closestGameObject = null;
         float closestDistance = Mathf.Infinity;
@@ -78,22 +81,48 @@ public class PlayerObjectInteraction : MonoBehaviour
                 closestDistance = curDistance;
             }
         }
-        return (closestGameObject, closestDistance);
+
+        if (closestDistance <= range) 
+        {
+            hasObject = true;
+            pickedObject = closestGameObject;
+            return closestGameObject;
+        } else {
+            return null;
+        }
     }
 
-    private void pickUpSmallObject(GameObject closestGO, float distance) {
-        if ( distance <= range ) {
-                hasObject = true;
-                pickedSmallObject = closestGO;
-                pickedSmallObject.GetComponent<PickableObject>().moveToRightHand();
-            } else {
-                print(distance);
-            }
+    private void pickUpSmallObject(GameObject closestGO) {
+        pickedObject.GetComponent<PickableObject>().pick();
     }
 
-    private void fling() {
+    private  void moveBigObject(GameObject closestGO)
+    {
+        pickedObject.GetComponent<MoveableObject>().move();
+    }
+
+    private void useObject()
+    {
+        if (pickedObject.tag == "SmallObject") {
+            fling();
+        } else if (pickedObject.tag == "BigObject") {
+            release();
+        }
+
+        
+
+    }
+
+    private void fling() 
+    {
         hasObject = false;
-        pickedSmallObject.GetComponent<PickableObject>().fling(playerCameraDirection.forward, power);
+        pickedObject.GetComponent<PickableObject>().fling(playerCameraDirection.forward, power);
+    }
+
+    private void release()
+    {
+        hasObject = false;
+        pickedObject.GetComponent<MoveableObject>().release();
     }
 
 }

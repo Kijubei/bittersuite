@@ -23,7 +23,7 @@ public class PressurePlate : MonoBehaviour
         }
         GameObject[] playerList = GameObject.FindGameObjectsWithTag("Player");
         GameObject[] BigObjectList = GameObject.FindGameObjectsWithTag("BigObject");
-        heavyGOList = new GameObject[playerList.Length + BigObjectList.Length];
+        // heavyGOList = new GameObject[playerList.Length + BigObjectList.Length];
         heavyGOList = playerList.Concat(BigObjectList).ToArray();
         if (heavyGOList is null)
         {

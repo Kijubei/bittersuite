@@ -11,9 +11,7 @@ GameObject:
   - component: {fileID: 7298563023329140519}
   - component: {fileID: 1734645453424338193}
   - component: {fileID: 5417333038039259624}
-  - component: {fileID: -1920539535782580667}
   - component: {fileID: 5574612345830099833}
-  - component: {fileID: 1546871183877260306}
   m_Layer: 0
   m_Name: Schluessel
   m_TagString: SmallObject
@@ -81,20 +79,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &-1920539535782580667
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5986108257574546740}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4378626225376690045, guid: 87583d81ec77adb4887cbcef6edb5b2f, type: 3}
 --- !u!114 &5574612345830099833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,20 +94,4 @@ MonoBehaviour:
   pickPosition: {x: 0.008, y: 0.085, z: 0.05}
   pickRotation: {x: 24.2, y: 55.7, z: 134.6}
   holdingObject: {fileID: 0}
-  rb: {fileID: 1546871183877260306}
---- !u!54 &1546871183877260306
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5986108257574546740}
-  serializedVersion: 2
-  m_Mass: 0.2
-  m_Drag: 1
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  rigidbodyObject: {fileID: 0}
