@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyObject : MonoBehaviour
+public class Destroyable : MonoBehaviour
 {
     public GameObject destroyedVersion;
 
-    private void OnMouseDown()
+    public void destory()
     {
         Instantiate(destroyedVersion, transform.position, transform.rotation);
+        this.tag = "Untagged";
         Destroy(this.gameObject);
     }
     // Start is called before the first frame update

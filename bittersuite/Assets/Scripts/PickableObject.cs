@@ -13,6 +13,7 @@ public class PickableObject : MonoBehaviour
 
     private Vector3 throwPosition = new Vector3(-0.4f, -0.3f, -0.3f);
     private bool applyForce = false;
+    private bool isBreakable = false;
     private Vector3 flingDirection;
     private float flingPower;
 
@@ -34,6 +35,15 @@ public class PickableObject : MonoBehaviour
         }
     }
 
+    void OnCollisionEnter(Collision collision)
+    {
+        if (isBreakable) {
+            isBreakable = false;
+            this.GetComponent<Destroyable>().destory();
+            Debug.Log("Boing");
+        }
+    }
+
     public void pick() {
         rigidbodyObject.isKinematic = true;
         this.transform.parent = holdingObject;
@@ -52,6 +62,8 @@ public class PickableObject : MonoBehaviour
         this.flingDirection = flingDirection;
         this.flingPower = power;
         applyForce = true;
+        if (this.GetComponent<Destroyable>()) {isBreakable = true;}
+        
     }
 
 }

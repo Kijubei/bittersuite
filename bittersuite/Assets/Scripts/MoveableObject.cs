@@ -27,16 +27,11 @@ public class MoveableObject : MonoBehaviour
     }
 
     public void move() {
-        // rigidbodyObject.isKinematic = true;
         this.transform.parent = holdingObject;
-        // this.transform.localPosition = pickPosition;
-        // this.transform.localEulerAngles = pickRotation;
-        Debug.Log("Moving");
     }
 
     public void release()
     {
         this.transform.parent = null;
-        Debug.Log("Releasing");
     }
 }

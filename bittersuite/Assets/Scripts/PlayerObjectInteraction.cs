@@ -74,6 +74,7 @@ public class PlayerObjectInteraction : MonoBehaviour
         Vector3 position = this.transform.position;
         foreach (GameObject currentGameObject in pickableGOList)
         {
+            if (currentGameObject == null) {continue;}
             float curDistance = Vector3.Distance(position, currentGameObject.transform.position);
             if (curDistance < closestDistance)
             {
@@ -108,21 +109,20 @@ public class PlayerObjectInteraction : MonoBehaviour
         } else if (pickedObject.tag == "BigObject") {
             release();
         }
-
-        
-
     }
 
     private void fling() 
     {
         hasObject = false;
         pickedObject.GetComponent<PickableObject>().fling(playerCameraDirection.forward, power);
+        pickedObject = null;
     }
 
     private void release()
     {
         hasObject = false;
         pickedObject.GetComponent<MoveableObject>().release();
+        pickedObject = null;
     }
 
 }
