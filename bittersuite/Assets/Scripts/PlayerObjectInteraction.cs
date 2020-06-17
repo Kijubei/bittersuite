@@ -8,7 +8,7 @@ public class PlayerObjectInteraction : MonoBehaviour
     private KeyCode pickUpButton = KeyCode.Mouse0;
     private KeyCode useObjectButton = KeyCode.Mouse1;
     private GameObject pickedObject;
-    private GameObject[] pickableGOList;
+    private static List<GameObject> pickableGOList;
     private bool hasObject = false;
     [Tooltip("Range allowed to interact with objects")]
     public float range; 
@@ -18,11 +18,11 @@ public class PlayerObjectInteraction : MonoBehaviour
     public Transform playerCameraDirection;
     void Start()
     {
-        GameObject[] smallObjectList = GameObject.FindGameObjectsWithTag("SmallObject");
-        GameObject[] bigObjectList = GameObject.FindGameObjectsWithTag("BigObject");
-        // pickableGOList = new GameObject[smallObjectList.Length + bigObjectList.Length];
+        List<GameObject> smallObjectList = GameObject.FindGameObjectsWithTag("SmallObject").ToList();
+        List<GameObject> bigObjectList = GameObject.FindGameObjectsWithTag("BigObject").ToList();
 
-        pickableGOList = smallObjectList.Concat(bigObjectList).ToArray();
+        pickableGOList = smallObjectList.Concat(bigObjectList).ToList();
+        Debug.Log("Pickable item count = " + pickableGOList.Count);
     }
 
     // Update is called once per frame
@@ -52,6 +52,30 @@ public class PlayerObjectInteraction : MonoBehaviour
 
     }
 
+    // PUBLIC API
+    public static void newPickableObject(GameObject newObject)
+    {
+        Debug.Log("Adding new object!");
+        if (newObject.tag == "SmallObject" || newObject.tag == "BigObject")
+        {
+            pickableGOList.Add(newObject);
+            Debug.Log("Added!");
+            Debug.Log("Last item is " + pickableGOList.Last().name);
+            Debug.Log("Pickable item count = " + pickableGOList.Count);
+            if (pickableGOList.Last().GetComponent<PickableObject>() != null)
+            {
+                Debug.Log("Last item has PickableObject");
+            }
+        }
+    }
+        public static void removePickableObject(GameObject newObject)
+    {
+        int removeIndex = pickableGOList.FindIndex(x => GameObject.ReferenceEquals(x, newObject));
+
+        pickableGOList.RemoveAt(removeIndex);
+    }
+
+    // PRIVATE API
     private void tryToPickupObject() {
         GameObject closestObject = searchClosestObjectInDistance();
          if (closestObject is null) { 
@@ -82,6 +106,9 @@ public class PlayerObjectInteraction : MonoBehaviour
                 closestDistance = curDistance;
             }
         }
+
+        Debug.Log("Clostest distance is " + closestDistance);
+        Debug.Log("Clostest Objects name is " + closestGameObject.name);
 
         if (closestDistance <= range) 
         {

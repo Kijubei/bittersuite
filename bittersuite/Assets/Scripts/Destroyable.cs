@@ -5,13 +5,8 @@ using UnityEngine;
 public class Destroyable : MonoBehaviour
 {
     public GameObject destroyedVersion;
+    public GameObject loot;
 
-    public void destory()
-    {
-        Instantiate(destroyedVersion, transform.position, transform.rotation);
-        this.tag = "Untagged";
-        Destroy(this.gameObject);
-    }
     // Start is called before the first frame update
     void Start()
     {
@@ -22,5 +17,32 @@ public class Destroyable : MonoBehaviour
     void Update()
     {
         
+    }
+
+    // PUBLIC API
+    public void destory()
+    {
+        destroySelf();
+        spawnLoot();
+    }
+
+    // PRIVATE API
+
+    private void destroySelf()
+    {
+        PlayerObjectInteraction.removePickableObject(this.gameObject);
+        Instantiate(destroyedVersion, transform.position, transform.rotation);
+        this.tag = "Untagged";
+        Destroy(this.gameObject);
+    }
+    private void spawnLoot()
+    {
+        loot.name = "The Loot";
+        Debug.Log("Loot tag is " + loot.tag);
+        Vector3 lootPosition = transform.position;
+        lootPosition.y += 0.2f;
+        Instantiate(loot, lootPosition, transform.rotation);
+        PlayerObjectInteraction.newPickableObject(loot);
+
     }
 }

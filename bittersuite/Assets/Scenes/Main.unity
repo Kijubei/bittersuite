@@ -14700,6 +14700,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destroyedVersion: {fileID: 3446547270642183998, guid: 8ced71ef56b48e3468d3b114344a44db,
     type: 3}
+  loot: {fileID: 772982564}
 --- !u!54 &1535164676
 Rigidbody:
   m_ObjectHideFlags: 0

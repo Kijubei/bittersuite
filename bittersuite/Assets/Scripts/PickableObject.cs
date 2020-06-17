@@ -40,11 +40,11 @@ public class PickableObject : MonoBehaviour
         if (isBreakable) {
             isBreakable = false;
             this.GetComponent<Destroyable>().destory();
-            Debug.Log("Boing");
         }
     }
 
     public void pick() {
+        Debug.Log("Picking " + this.name);
         rigidbodyObject.isKinematic = true;
         this.transform.parent = holdingObject;
         this.transform.localPosition = pickPosition;
